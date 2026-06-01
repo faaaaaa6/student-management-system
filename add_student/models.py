@@ -6,7 +6,9 @@ class Student(models.Model):
     age = models.IntegerField()
     email = models.EmailField()
     phone = models.CharField(max_length=12)
+    course = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
+
 
 
     def __str__(self):

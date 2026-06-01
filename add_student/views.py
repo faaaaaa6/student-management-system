@@ -7,16 +7,18 @@ def add_student(request):
         name = request.POST["name"]
         age = request.POST["age"]
         email = request.POST["email"]
-        phone = request.POST['phone']
+        phone = request.POST["phone"]
+        course= request.POST["course"]
         
         
 
-        Student.object.create(
+        Student.objects.create(
             
             name=name,
             age=age,
             email=email,
-            phone=phone
+            phone=phone,
+            course=course
           
 
         )
