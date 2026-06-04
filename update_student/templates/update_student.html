@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Update Student</title>
+  <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+   <nav>
+      <span>Student Managment System</span>
+   </nav>   
+   <a href="/" class="btn">Dashboard</a>
+
+   <div class="container">
+      <h2>Update Student</h2>
+      <form method="POST" class="form-box">
+         {% csrf_token %}
+
+         <input type="text" name="name" value="{{student.name}}">
+         <input type="number" name="age" value="{{student.age}}">
+         <input type= "text" name="course" value="{{student.course}}">
+         <input type="email" name="email" value="{{student.email}}">
+         <input type="text" name="phone" value="{{student.phone}}">
+         <button type="submit" class="btn">Save</button>
+      </form>
+   </div>
+</body>
+</html>
