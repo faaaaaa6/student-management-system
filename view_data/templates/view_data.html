@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Students</title>  
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    
+
+</head>  
+<body>
+
+    <nav>
+        <span> Student Management System</span>
+    </nav>
+    <a href="/" class="btn">Dashboard</a>
+    
+    <div class="container">
+        <h2>Student List</h2>
+        {% for student in students %}
+        <div  class="student-card">
+            <p>Name: {{ student.name }}</p>
+            <p>Age: {{ student.age }}</p>
+            <p>Course: {{ student.course }}</p>
+            <p>Email: {{ student.email }}</p>
+            <p>Phone: {{ student.phone }}</p>
+            <a href="{% url 'update_student' student.pk %}" class="btn">Edit</a>
+            <a href="{% url 'delete_student' student.pk %}" class="btn">Delete</a>
+        </div>
+         
+        {% endfor %}
+    </div>
+    
+</body>
+</html>    
+
+
+
+
+
+</body>
+</html>
+
